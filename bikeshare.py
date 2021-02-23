@@ -21,8 +21,6 @@ def get_filters():
     while city.lower() not in ['chicago', 'new york city', 'washington']:
         city = input ("Please enter the city name: chicago, new york city, or washington:")
 
-
-
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input ("Please enter the month ('January to June') or ('all' if all months required):").lower()
     while month.lower() not in ['all','january', 'february', 'march', 'april', 'may', 'june']:
@@ -35,7 +33,6 @@ def get_filters():
 
     print('-'*40)
     return city, month, day
-
 
 def load_data(city, month, day):
     """
@@ -78,7 +75,6 @@ def load_data(city, month, day):
 
     return df
 
-
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
@@ -100,16 +96,11 @@ def time_stats(df):
     # TO DO: display the most common day of week
     print ('Most common day of week: {}'.format(df['day_of_week'].value_counts().idxmax()))
 
-
-
     # TO DO: display the most common start hour
     print ('Most common hour of the day: {}'.format(df['hour'].value_counts().idxmax()))
 
-
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
@@ -126,10 +117,8 @@ def station_stats(df):
     # TO DO: display most frequent combination of start station and end station trip
     print ('Most common start and end station combincation: {}'.format(df.groupby('Start Station')['End Station'].value_counts().idxmax()))
 
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
@@ -143,10 +132,8 @@ def trip_duration_stats(df):
     # TO DO: display mean travel time
     print ('Mean travel time: {}'.format(df['Trip Duration'].mean()))
 
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
@@ -156,21 +143,19 @@ def user_stats(df):
 
      # TO DO: Display counts of user types
     print ('\nTotal count per User Type: \n{}'.format(df['User Type'].value_counts()))
-    
+
     if 'Gender' in df:
-       
+
         # TO DO: Display counts of gender
         print ('\nTotal count per gender: \n{}'.format(df['Gender'].value_counts()))
-
 
         # TO DO: Display earliest, most recent, and most common year of birth
         print ('\nUser earliest year of birth: {}'.format(int(df['Birth Year'].min())))
         print ('User latest year of birth: {}'.format(int(df['Birth Year'].max())))
         print ('Most common day of week: {}'.format(int(df['Birth Year'].value_counts().idxmax())))
-        # Only access Gender column in this case 
+        # Only access Gender column in this case
     else:
         print('\nGender stats cannot be calculated because Gender does not appear in the dataframe')
-
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -186,8 +171,6 @@ def view_data(df):
          print(df.iloc[start_loc:start_loc+5])
          start_loc += 5
          view_display = input("Do you wish to continue?: ").lower()
-            
-            
 
 def main():
     while True:
@@ -203,7 +186,6 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-
 
 if __name__ == "__main__":
 	main()
