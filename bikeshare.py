@@ -166,7 +166,7 @@ def view_data(df):
     start_loc = 0
     while view_data not in ['yes', 'no']:
          view_data = input("Would you like to view 5 rows of individual trip data? Enter yes or no?").lower()
-    view_display = 'yes'
+    view_display = view_data
     while (view_display == 'yes'):
          print(df.iloc[start_loc:start_loc+5])
          start_loc += 5
