@@ -149,16 +149,16 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """Displays statistics on bikeshare users. The data will be displayed 5 rows at a time until the user commands it to stop"""
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
      # TO DO: Display counts of user types
     print ('\nTotal count per User Type: \n{}'.format(df['User Type'].value_counts()))
-    
+
     if 'Gender' in df:
-       
+
         # TO DO: Display counts of gender
         print ('\nTotal count per gender: \n{}'.format(df['Gender'].value_counts()))
 
@@ -167,7 +167,7 @@ def user_stats(df):
         print ('\nUser earliest year of birth: {}'.format(int(df['Birth Year'].min())))
         print ('User latest year of birth: {}'.format(int(df['Birth Year'].max())))
         print ('Most common day of week: {}'.format(int(df['Birth Year'].value_counts().idxmax())))
-        # Only access Gender column in this case 
+        # Only access Gender column in this case
     else:
         print('\nGender stats cannot be calculated because Gender does not appear in the dataframe')
 
@@ -186,8 +186,8 @@ def view_data(df):
          print(df.iloc[start_loc:start_loc+5])
          start_loc += 5
          view_display = input("Do you wish to continue?: ").lower()
-            
-            
+
+
 
 def main():
     while True:
