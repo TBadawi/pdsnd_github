@@ -4,7 +4,7 @@
 23-Feb-2021
 
 ### Project Title
-Post your work on Github
+"Post your work on Github" which is the assignment for Version Control.
 
 ### Description
 The project requires me to fork Github project repository.
